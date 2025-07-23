@@ -1,38 +1,826 @@
-.App {
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #36454F; /* Charcoal Grey for main text */
+  background-color: #FDF5E6; /* Old Lace for light background */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Added for the main content area */
+.main-content-area {
+  flex-grow: 1; /* Allows it to take up available space */
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem; /* Equivalent to text-4xl */
+  font-weight: bold;
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-subtitle {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  color: #555; /* Slightly lighter grey for subtitle */
+  text-align: center;
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Navigation Bar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Equivalent to text-2xl */
+  font-weight: bold;
+  color: #A0522D; /* Sienna/Terracotta */
+  text-decoration: none;
+}
+
+.menu-button-mobile {
+  display: block; /* Show by default for mobile */
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #36454F; /* Charcoal Grey */
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-icon {
+  width: 1.5rem; /* Equivalent to w-6 */
+  height: 1.5rem; /* Equivalent to h-6 */
+}
+
+.navbar-links-desktop {
+  display: none; /* Hidden by default for mobile */
+}
+
+.nav-link {
+  color: #36454F; /* Charcoal Grey */
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #A0522D; /* Sienna/Terracotta */
+}
+
+.navbar-links-mobile {
+  margin-top: 1rem;
+  padding: 0 1rem 1rem;
+  background-color: #fff;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.nav-link-mobile {
+  display: block;
+  color: #36454F; /* Charcoal Grey */
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link-mobile:hover {
+  color: #A0522D; /* Sienna/Terracotta */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+ /* background-image: url('/images/home-cafe-fausse.webp'); /* Your custom image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 0.5rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero-title {
+  font-size: 3rem; /* Equivalent to text-5xl, adjust for md:text-7xl with media query */
+  font-weight: 800; /* Equivalent to font-extrabold */
+  line-height: 1.25; /* Equivalent to leading-tight */
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Equivalent to drop-shadow-lg */
+}
+
+.hero-subtitle {
+  font-size: 1.25rem; /* Equivalent to text-xl, adjust for md:text-2xl with media query */
+  margin-bottom: 2rem; /* Equivalent to mb-8 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Equivalent to drop-shadow-md */
+}
+
+.hero-button {
+  background-color: #A0522D; /* Sienna/Terracotta */
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 2rem; /* Equivalent to py-3 px-8 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-decoration: none;
+  display: inline-block; /* For transform to work correctly */
+}
+
+.hero-button:hover {
+  background-color: #D2691E; /* Chocolate/Burnt Orange */
+  transform: scale(1.05); /* Equivalent to hover:scale-105 */
+}
+
+/* About Us Section */
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem; /* Equivalent to py-16 px-4 */
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  align-items: center;
+  gap: 3rem; /* Equivalent to gap-12 */
+}
+
+.about-image-container {
+  width: 100%;
+}
+
+.about-image {
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-xl */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-text-container {
+  width: 100%;
+  text-align: center; /* Default to center for mobile */
+}
+
+.about-paragraph {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  color: #36454F; /* Charcoal Grey */
+  line-height: 1.625; /* Equivalent to leading-relaxed */
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+/* Menu Section */
+.menu-section {
+  background-color: #FFF8DC; /* Cornsilk for light background */
+  padding: 4rem 1rem; /* Equivalent to py-16 px-4 */
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menu-title {
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 2rem; /* Equivalent to gap-8 */
+}
+
+.menu-category {
+  background-color: #fff;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  padding: 1.5rem; /* Equivalent to p-6 */
+  transition: transform 0.3s ease-in-out;
+
+  display: flex; /* Make category a flex container for its items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+  gap: 1.5rem; /* Gap between menu items within a category */
+  padding-bottom: 1.5rem; /* Add padding at the bottom of the category for spacing */
+}
+
+.menu-category:hover {
+  transform: scale(1.02); /* Slightly less than 1.05 for category */
+}
+
+.category-title {
+  font-size: 1.75rem; /* Equivalent to text-2xl */
+  font-weight: 600; /* Equivalent to font-semibold */
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%; /* Ensure title takes full width */
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column; /* Changed to column so image is above text */
+  align-items: center; /* Center content horizontally within item */
+  gap: 0.5rem; /* Smaller gap between image and text */
+  /* Removed margin-bottom, padding-bottom, border-bottom */
+  flex-basis: calc(50% - 0.75rem); /* Two items per row on smaller screens, considering gap */
+  max-width: 200px; /* Limit individual item width */
+  text-align: center; /* Center text within item */
+}
+
+/* No need for .menu-category .menu-item:last-child border removal anymore if .menu-item has no border-bottom */
+
+
+.menu-item-image {
+  width: 8rem; /* Increased width */
+  height: 6rem; /* Increased height */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow to make it pop */
+}
+
+.menu-item-details {
+  flex-grow: 0; /* No longer need to grow, content will center */
+  text-align: center; /* Center text */
+}
+
+.item-name {
+  font-size: 1.1rem; /* Slightly smaller name for better fit */
+  font-weight: 600;
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 0.1rem;
+}
+
+.item-description {
+  font-size: 0.8rem; /* Slightly smaller description */
+  color: #555; /* Slightly lighter grey */
+  margin-bottom: 0.25rem;
+}
+
+.item-price {
+  font-size: 1rem; /* Adjusted price size */
+  font-weight: bold;
+  color: #A0522D; /* Sienna/Terracotta */
+}
+
+
+/* Reservations Section */
+.reservations-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem; /* Equivalent to py-16 px-4 */
+}
+
+.reservations-header {
+  text-align: center;
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.reservation-form-container {
+  max-width: 32rem; /* Equivalent to max-w-xl */
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  padding: 3rem; /* Increased padding from 2rem to 3rem */
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Equivalent to space-y-6 */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Increased margin-bottom from 1rem to 1.5rem */
+}
+.form-label {
+  display: block;
+  color: #36454F; /* Charcoal Grey */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+}
+
+.form-input,
+.form-textarea {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Equivalent to shadow */
+  border: 1px solid #D3D3D3; /* Light Grey */
+  border-radius: 0.25rem; /* Equivalent to rounded */
+  width: 100%;
+  padding: 0.75rem 1rem; /* Equivalent to py-3 px-4 */
+  color: #36454F; /* Charcoal Grey */
+  line-height: 1.25; /* Equivalent to leading-tight */
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.5); /* Sienna/Terracotta with opacity */
+}
+
+.form-textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.form-submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.submit-button {
+  background-color: #A0522D; /* Sienna/Terracotta */
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 2rem; /* Equivalent to py-3 px-8 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #D2691E; /* Chocolate/Burnt Orange */
+  transform: scale(1.05); /* Equivalent to hover:scale-105 */
+}
+
+
+/* Gallery Section */
+.gallery-section {
+  background-color: #FFF8DC; /* Cornsilk for light background */
+  padding: 4rem 1rem;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gallery-title {
+  margin-bottom: 3rem;
+}
+
+.image-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 1.5rem;
+  margin-bottom: 4rem; /* Space before awards */
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover;
+  display: block;
+}
+
+/* Awards Section */
+.awards-section {
+  margin-bottom: 4rem;
+}
+
+.awards-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.awards-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.awards-list li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.awards-list li:last-child {
+  margin-bottom: 0;
+}
+
+.award-year {
+  font-weight: bold;
+  color: #A0522D; /* Sienna/Terracotta */
+  margin-right: 0.5rem;
+}
+
+/* Customer Reviews Section */
+.reviews-section {
+  margin-bottom: 4rem; /* Space before newsletter */
+}
+
+.reviews-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.review-card-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.review-text {
+  font-style: italic;
+  color: #555; /* Slightly lighter grey */
+  margin-bottom: 1rem;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #A0522D; /* Sienna/Terracotta */
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: #FDF5E6; /* Old Lace for light background */
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.newsletter-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.newsletter-title {
+  color: #36454F; /* Charcoal Grey */
+  margin-bottom: 1rem;
+}
+
+.newsletter-subtitle {
+  color: #555; /* Slightly lighter grey */
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 1rem;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #D3D3D3; /* Light Grey */
+  border-radius: 0.5rem;
+  width: 100%; /* Full width on mobile */
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: #A0522D; /* Sienna/Terracotta */
+  box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.2);
+}
+
+.newsletter-button {
+  background-color: #A0522D; /* Sienna/Terracotta */
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%; /* Full width on mobile */
+}
+
+.newsletter-button:hover {
+  background-color: #D2691E; /* Chocolate/Burnt Orange */
+}
+
+
+/* Contact Section */
+.contact-section {
+  background-color: #36454F; /* Charcoal Grey for dark background */
+  color: #fff;
+  padding: 4rem 1rem; /* Equivalent to py-16 px-4 */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+  color: #fff; /* Ensure title is white */
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 2rem; /* Equivalent to gap-8 */
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.contact-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.contact-icon {
+  width: 2.5rem; /* Equivalent to w-10 */
+  height: 2.5rem; /* Equivalent to h-10 */
+  color: #FFD700; /* Gold for secondary accent */
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+.contact-item-title {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  font-weight: 600; /* Equivalent to font-semibold */
+  margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+}
+
+.contact-item-text {
+  color: #D3D3D3; /* Light Grey for subtle text */
+}
+
+.social-media-links {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1.5rem; /* Equivalent to space-x-6 */
 }
 
-.App-link {
-  color: #61dafb;
+.social-icon {
+  color: #D3D3D3; /* Light Grey */
+  transition: color 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social-icon:hover {
+  color: #FFD700; /* Gold for secondary accent */
+}
+
+.social-icon svg {
+  width: 2rem; /* Equivalent to w-8 */
+  height: 2rem; /* Equivalent to h-8 */
+}
+
+/* Footer */
+.footer {
+  background-color: #2F4F4F; /* Dark Slate Grey for footer background */
+  color: #D3D3D3; /* Light Grey */
+  padding: 2rem 1rem; /* Equivalent to py-8 px-4 */
+  text-align: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-credit {
+  margin-top: 0.5rem; /* Equivalent to mt-2 */
+}
+
+/* Lightbox Styles */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh; /* Limit height to viewport height */
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+.lightbox-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Ensure button is clickable */
+}
+
+/* Form Message Styles */
+.form-message {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success-message {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green */
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
+  border: 1px solid #f5c6cb;
+}
+
+/* Page Transition Styles */
+.page-transition {
+  transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+  opacity: 0; /* Default to hidden */
+}
+
+.page-transition.fade-in {
+  opacity: 1;
+}
+
+.page-transition.fade-out {
+  opacity: 0;
+}
+
+
+/* Responsive Adjustments (Media Queries) */
+@media (min-width: 768px) { /* md breakpoint */
+  .menu-button-mobile {
+    display: none; /* Hide mobile menu button on larger screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-links-desktop {
+    display: flex; /* Show desktop links */
+    gap: 1.5rem; /* Equivalent to space-x-6 */
+  }
+
+  .navbar-links-mobile {
+    display: none; /* Hide mobile menu */
+  }
+
+  .hero-title {
+    font-size: 4.5rem; /* Equivalent to md:text-7xl */
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem; /* Equivalent to md:text-2xl */
+  }
+
+  .about-content-wrapper {
+    flex-direction: row; /* Row layout for desktop */
+    text-align: left;
+  }
+
+  .about-image-container {
+    width: 50%; /* Half width for image */
+  }
+
+  .about-text-container {
+    width: 50%; /* Half width for text */
+    text-align: left;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens (categories) */
+  }
+
+  .contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+  }
+
+  .review-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+  }
+
+  .newsletter-form {
+    flex-direction: row; /* Row layout for desktop */
+  }
+
+  .newsletter-input {
+    width: auto; /* Auto width on desktop */
+  }
+
+  .newsletter-button {
+    width: auto; /* Auto width on desktop */
   }
 }
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+  }
+}
+

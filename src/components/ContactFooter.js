@@ -79,7 +79,7 @@ const ContactFooter = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
               <h3 className="contact-item-title">Our Location</h3>
-              <p className="contact-item-text">1234 Culinary Ave, Suite 100, Washington, DC 20002</p>
+              <p className="contact-item-text">7894 Muthithi Ave, Suite 100, Nairobi, Kenya</p>
             </div>
 
             {/* Phone */}
@@ -88,7 +88,7 @@ const ContactFooter = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
               <h3 className="contact-item-title">Call Us</h3>
-              <p className="contact-item-text">(202) 555-4567</p>
+              <p className="contact-item-text">(254) 555-4567</p>
             </div>
 
             {/* Email */}
@@ -126,7 +126,7 @@ const ContactFooter = () => {
       <footer className="footer">
         <div className="footer-container">
           <p>&copy; {new Date().getFullYear()} Caffe Fausse. All rights reserved.</p>
-          <p className="footer-credit">Designed with &hearts; by Your Name/Company</p>
+          <p className="footer-credit">Designed with &hearts; by Kagunza Apps</p>
         </div>
       </footer>
     </>

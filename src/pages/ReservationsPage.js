@@ -70,6 +70,7 @@ const ReservationsPage = () => {
       setIsSuccess(false);
     }
   };
+  //return statement
 
   return (
     <div className="page-content">

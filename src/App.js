@@ -27,14 +27,11 @@ const App = () => {
   // Gallery images data (remains in App.js as it's passed to GalleryPage and used by lightbox)
   const galleryImages = [
     '/images/gallery-special-event.webp', // Example: Ensure these paths exist in public/images/
-    '/images/delicious-dish-1.jpg',
-    '/images/special-event-1.jpg',
-    '/images/behind-scenes-1.jpg',
-    '/images/restaurant-interior-2.jpg',
-    '/images/delicious-dish-2.jpg',
-    // Replace with your actual image paths in public/images/
-    // Example: '/images/gallery-cafe-interior.jpg',
-    // Ensure you have actual images in public/images/ corresponding to these paths
+    '/images/caffe fausse award.png',
+    '/images/caffe fausse interiror 1.png',
+    '/images/caffe fause interior 2.png',
+    '/images/caffe fausse exterior 1.png',
+    '/images/caffe fasusse exterior 2.png',
   ];
 
   // Function to open lightbox

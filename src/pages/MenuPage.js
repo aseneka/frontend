@@ -13,7 +13,7 @@ const MenuPage = () => {
             <div className="menu-category">
               <h3 className="category-title">Starters</h3>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Bruschetta" alt="Bruschetta" className="menu-item-image" />
+                <img src="\images\Bruchette.png" alt="Bruschetta" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Bruschetta</h4>
                   <p className="item-description">Fresh tomatoes, basil, olive oil, and toasted baguette slices</p>
@@ -21,7 +21,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Caesar+Salad" alt="Caesar Salad" className="menu-item-image" />
+                <img src="\images\salas.png" alt="Caesar Salad" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Caesar Salad</h4>
                   <p className="item-description">Crisp romaine with homemade Caesar dressing</p>
@@ -34,7 +34,7 @@ const MenuPage = () => {
             <div className="menu-category">
               <h3 className="category-title">Main Courses</h3>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Grilled+Salmon" alt="Grilled Salmon" className="menu-item-image" />
+                <img src="\images\grilled salmon.png" alt="Grilled Salmon" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Grilled Salmon</h4>
                   <p className="item-description">Served with lemon butter sauce and seasonal vegetables</p>
@@ -50,7 +50,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Vegetable+Risotto" alt="Vegetable Risotto" className="menu-item-image" />
+                <img src="\images\vegetable rishoto.png" alt="Vegetable Risotto" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Vegetable Risotto</h4>
                   <p className="item-description">Creamy Arborio rice with wild mushrooms</p>
@@ -63,7 +63,7 @@ const MenuPage = () => {
             <div className="menu-category">
               <h3 className="category-title">Desserts</h3>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Tiramisu" alt="Tiramisu" className="menu-item-image" />
+                <img src="\images\tiramassu.png" alt="Tiramisu" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Tiramisu</h4>
                   <p className="item-description">Classic Italian dessert with mascarpone</p>
@@ -71,7 +71,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Cheesecake" alt="Cheesecake" className="menu-item-image" />
+                <img src="\images\cheese cake.png" alt="Cheesecake" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Cheesecake</h4>
                   <p className="item-description">Creamy cheesecake with berry compote</p>
@@ -84,7 +84,7 @@ const MenuPage = () => {
             <div className="menu-category">
               <h3 className="category-title">Beverages</h3>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Red+Wine" alt="Red Wine" className="menu-item-image" />
+                <img src="\images\red wine.png" alt="Red Wine" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Red Wine (Glass)</h4>
                   <p className="item-description">A selection of Italian reds</p>
@@ -92,7 +92,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=White+Wine" alt="White Wine" className="menu-item-image" />
+                <img src="\images\white wine.png" alt="White Wine" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">White Wine (Glass)</h4>
                   <p className="item-description">Crisp and refreshing</p>
@@ -100,7 +100,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Craft+Beer" alt="Craft Beer" className="menu-item-image" />
+                <img src="/images/beer.png" alt="Craft Beer" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Craft Beer</h4>
                   <p className="item-description">Local artisan brews</p>
@@ -108,7 +108,7 @@ const MenuPage = () => {
                 </div>
               </div>
               <div className="menu-item">
-                <img src="https://placehold.co/100x70/FDBA74/FFFFFF?text=Espresso" alt="Espresso" className="menu-item-image" />
+                <img src="\images\expresso.png" alt="Espresso" className="menu-item-image" />
                 <div className="menu-item-details">
                   <h4 className="item-name">Espresso</h4>
                   <p className="item-description">Strong and aromatic</p>
